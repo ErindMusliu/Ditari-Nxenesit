@@ -16,7 +16,7 @@ class Nxenesi extends Database{
     }
 
     public function shto_nxenesin(string $emri, string $mbiemri, string $klasa){
-        $sql = "insert into nxenesit(shto_nxenesin(emri,mbiemri,klasa) value('$emri','$mbiemri','$klasa')";
+        $sql = "insert into nxenesit(emri,mbiemri,klasa) value('$emri','$mbiemri','$klasa')";
 
         return $this->conn->query($sql);
     }
