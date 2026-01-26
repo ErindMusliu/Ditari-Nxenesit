@@ -16,28 +16,28 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link text-white" aria-current="page" href="#">Home</a>
+          <a class="nav-link text-white" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Nxenesit</a>
+          <a class="nav-link text-white" href="nxenesit.php">Nxenesit</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Shto Nxenesit</a>
+          <a class="nav-link text-white" href="nxenesi_shto.php">Shto Nxenesit</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Notat</a>
+          <a class="nav-link text-white" href="notat.php">Notat</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Shto Notat</a>
+          <a class="nav-link text-white" href="nota_shto.php">Shto Notat</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Mungesat</a>
+          <a class="nav-link text-white" href="mungesat.php">Mungesat</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Shto Mungesat</a>
+          <a class="nav-link text-white" href="mungesa_shto.php">Shto Mungesat</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Raporti</a>
+          <a class="nav-link text-white" href="raporti.php">Raporti</a>
         </li>
       </ul>
     </div>
