@@ -3,8 +3,8 @@
 require_once('Database.php');
 
 class Nota extends Database{
-    public function notat_nxenesit(int $nxenesi_id){
-        $sql = "select * from where nxenesi_id='$nxenesi_id'";
+    public function notat_nxenesit(){
+        $sql = "select n.emri,n.mbiemri,n.klasa,no.id,no.lenda,no.nota,no.data,no.created_at,AVG(nota) as mesatarja from notat no inner join nxenesit n on no.nxenesi_id=n.id";
 
         return $this->conn->query($sql);
     }
@@ -21,5 +21,9 @@ class Nota extends Database{
         return $this->conn->query($sql);
     }
 
-    public mesatarjaENxenesit($nxenesi_id){}
+    public function mesatarjaENxenesit(int $nxenesi_id){
+        $sql = "select AVG(nota) as mesatarja from notat where nxenesi_id='$nxenesi_id'";
+
+        return $this->conn->query($sql);
+    }
 }

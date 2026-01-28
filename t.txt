@@ -1,0 +1,131 @@
+Detyrë Projekti: Ditari i Nxënësit (PHP OOP + MySQLi)
+Qëllimi: Të krijoni një aplikacion të thjeshtë ku mësuesi mund të menaxhojë nxënësit, të regjistrojë notat dhe mungesat, dhe të shohë raportin e nxënësit (mesatare notash + total mungesash).
+1) Rregullat e projektit
+Përdorni PHP OOP (klasa).
+Përdorni MySQLi
+(thjeshtë: faqe + klasa).
+Bootstrap vetëm me CDN link
+Validim & sanitizim minimal: trim, strip_tags, htmlspecialchars.
+2) Struktura e projektit (obligative)
+Krijoni këtë strukturë folderash dhe fajllash:
+
+ditari/
+  config/
+    Database.php
+  classes/
+    Nxenesi.php
+    Nota.php
+    Mungesa.php
+  public/
+    index.php
+    nxenesit.php
+    nxenesi_shto.php
+    nxenesi_edit.php
+    nxenesi_fshi.php
+
+    notat.php
+    nota_shto.php
+    nota_fshi.php
+
+    mungesat.php
+    mungesa_shto.php
+    mungesa_fshi.php
+
+    raporti.php
+  templates/
+    header.php
+    footer.php
+3) Databaza – kërkesat për tabela
+Krijoni databazën ditari_db dhe tabelat: nxenesit, notat, mungesat.
+
+3.1 Tabela nxenesit
+id (PK, auto increment)
+emri (varchar, not null)
+mbiemri (varchar, not null)
+klasa (varchar, not null)
+created_at (timestamp)
+3.2 Tabela notat
+id (PK)
+nxenesi_id (FK → nxenesit.id)
+lenda (varchar, not null)
+nota (tinyint)
+data (date)
+created_at (timestamp)
+3.3 Tabela mungesat
+id (PK)
+nxenesi_id (FK → nxenesit.id)
+data (date)
+ore (tinyint)
+arsye (varchar, nullable)
+created_at (timestamp)
+Kërkesë e detyrueshme: Vendosni ON DELETE CASCADE te foreign keys, që kur fshihet nxënësi të fshihen automatikisht notat dhe mungesat.
+4) Klasa që duhet të krijoni (obligative)
+4.1 Database.php
+Metodë: lidhja(): mysqli
+4.2 Nxenesi.php
+Metodat minimale:
+
+index()
+find(int $id)
+shto_nxenesin(string $emri, string $mbiemri, string $klasa)
+perditeso_nxenesin(int $id, string $emri, string $mbiemri, string $klasa)
+fshi_nxenesin(int $id)
+4.3 Nota.php
+Metodat minimale:
+
+notat_nxenesit(int $nxenesi_id)
+shto_notat(int $nxenesi_id, string $lenda, int $nota, string $data): bool
+fshi_noten(int $id): bool
+mesatarjaENxenesit(int $nxenesi_id)
+Rregull: nota duhet të lejohet vetëm 1–5.
+4.4 Mungesa.php
+Metodat minimale:
+
+mungesat_nxenesit(int $nxenesi_id): array
+shto_mungesat(int $nxenesi_id, string $data, int $ore, string $arsye=""): bool
+fshi(int $id)
+totalOreMungese(int $nxenesi_id) (për raport)
+Rregull: orët mungesë duhet të lejohet vetëm 1–10.
+5) Faqet (UI) që duhet të punojnë
+5.1 index.php
+Përshkrim i shkurtër i projektit
+Buton: “Shko te Nxënësit”
+5.2 nxenesit.php
+Shfaq listën e nxënësve në tabelë
+Buton: “Shto Nxënës”
+Veprime për secilin nxënës: Edit, Fshi, Notat, Mungesat, Raporti
+5.3 nxenesi_shto.php
+Formë: emri, mbiemri, klasa
+Ruajtje në DB
+Mesazh gabimi nëse fusha janë bosh
+5.4 nxenesi_edit.php
+Merr id nga URL
+Mbush formën me të dhëna ekzistuese
+Përditëso në DB
+5.5 nxenesi_fshi.php
+Merr id nga URL
+Fshi nxënësin
+Kthehu te nxenesit.php
+5.6 notat.php
+Merr nxenesi_id nga URL
+Shfaq të gjitha notat e nxënësit
+Buton: “Shto Notë”
+Buton: “Fshi” për çdo notë
+5.7 nota_shto.php
+Formë: lenda, nota (1–5), data
+Ruaj në DB
+5.8 mungesat.php
+Merr nxenesi_id nga URL
+Shfaq mungesat: data, ore, arsye
+Buton: “Shto Mungesë”
+Buton: “Fshi” për çdo mungesë
+5.9 mungesa_shto.php
+Formë: data, ore (1–10), arsye (opsionale)
+Ruaj në DB
+5.10 raporti.php
+Merr nxenesi_id
+Shfaq: Emri + Klasa
+Shfaq: Mesatarja e notave (nga metoda mesatarjaENxenesit)
+Shfaq: Totali i orëve mungesë (nga metoda totalOreMungese)
+Butona: Notat / Mungesat / Kthehu
+Udhëzim: Ky dokument është vetëm për lexim. Projekti do të zhvillohet në PHP + MySQL. Nëse e hapni online, secili nxënës mund ta lexojë direkt në browser.

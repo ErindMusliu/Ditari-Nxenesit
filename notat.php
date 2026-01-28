@@ -2,10 +2,10 @@
 
 include('header.php');
 
-include('classes/Nxenesi.php');
+include('classes/Nota.php');
 
-$nxenesi = new Nxenesi();
-$nxenesit = $nxenesi->index();
+$nota = new Nota();
+$notat = $nota->notat_nxenesit();
 
 ?>
 
@@ -16,23 +16,29 @@ $nxenesit = $nxenesi->index();
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Emri</th>
-                        <th>Mbiemri</th>
+                        <th>Nxenesi</th>
                         <th>Klasa</th>
+                        <th>Lenda</th>
+                        <th>Nota</th>
+                        <th>Data</th>
+                        <th>Mesatarja</th>
                         <th>Created At</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <?php foreach($nxenesit as $n){ ?>
+                    <?php foreach($notat as $n){ ?>
                         <tr>
                         <td><?php echo $n['id'] ?></td>
-                        <td><?php echo $n['emri'] ?></td>
-                        <td><?php echo $n['mbiemri'] ?></td>
+                        <td><?php echo $n['emri']." ".$n['mbiemri'] ?></td>
                         <td><?php echo $n['klasa'] ?></td>
+                        <td><?php echo $n['lenda'] ?></td>
+                        <td><?php echo $n['nota'] ?></td>
+                        <td><?php echo $n['data'] ?></td>
+                        <td><?php echo $n['mesatarja'] ?></td>
                         <td><?php echo $n['created_at'] ?></td>
-                        <td><a class="btn btn-danger" href="delete.php?id=<?php echo $n['id']; ?>">Delete</a> <a class="btn btn-warning" href="edit-form.php?id=<?php echo $n['id']; ?>">Edit</a> <a class="btn btn-info" href="notat.php?id=<?php echo $n['id']; ?>">Notat</a> <a class="btn btn-light" href="notat.php?id=<?php echo $n['id']; ?>">Mungesat</a> <a class="btn btn-success" href="notat.php?id=<?php echo $n['id']; ?>">Raporti</a></td>
+                        <td><a class="btn btn-danger" href="nota_fshi.php?id=<?php echo $n['id']; ?>">Delete</a></td>
                         </tr>
                     <?php } ?>
                 </tbody>
