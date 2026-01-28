@@ -4,7 +4,7 @@ require_once('Database.php');
 
 class Mungesa extends Database{
     public function mungesat_nxenesit(){
-        $sql = "select n.emri,n.mbiemri,n.klasa,m.id,m.data,m.ore,m.arsye,m.created_at,SUM(ore) as total from mungesat m inner join nxenesit n on m.nxenesi_id=n.id";
+        $sql = "select n.emri,n.mbiemri,n.klasa,m.id,m.data,m.ore,m.arsye,m.created_at from mungesat m inner join nxenesit n on m.nxenesi_id=n.id";
 
         return $this->conn->query($sql);
     }
