@@ -50,7 +50,7 @@ else{
                 <!-- Button -->
 
                 <div class="mb-3">
-                    <button type="submit" class="btn btn-dark">Shto</button>
+                    <button type="submit" class="btn btn-dark">Edit</button>
                 </div>
             </form>
         </div>
