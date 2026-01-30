@@ -36,9 +36,6 @@
         <li class="nav-item">
           <a class="nav-link text-white" href="mungesa_shto.php">Shto Mungesat</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="raporti.php">Raporti</a>
-        </li>
       </ul>
     </div>
   </div>

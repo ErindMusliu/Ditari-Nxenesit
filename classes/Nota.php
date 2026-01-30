@@ -9,6 +9,12 @@ class Nota extends Database{
         return $this->conn->query($sql);
     }
 
+    public function find($id){
+        $sql = "select n.emri,n.mbiemri,n.klasa,no.id,no.lenda,no.nota,no.data,no.created_at,AVG(nota) as mesatarja from notat no inner join nxenesit n on no.nxenesi_id=n.id where no.nxenesi_id='$id'";
+
+        return $this->conn->query($sql);
+    }
+
     public function shto_notat(int $nxenesi_id, string $lenda, int $nota, string $data){
         $sql = "insert into notat(nxenesi_id,lenda,nota,data) value('$nxenesi_id','$lenda','$nota','$data')";
 

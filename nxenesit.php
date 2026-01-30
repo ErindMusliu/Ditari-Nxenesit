@@ -32,7 +32,7 @@ $nxenesit = $nxenesi->index();
                         <td><?php echo $n['mbiemri'] ?></td>
                         <td><?php echo $n['klasa'] ?></td>
                         <td><?php echo $n['created_at'] ?></td>
-                        <td><a class="btn btn-danger" href="nxenesi_fshi.php?id=<?php echo $n['id']; ?>">Delete</a> <a class="btn btn-warning" href="nxenesi_edit.php?id=<?php echo $n['id']; ?>">Edit</a> <a class="btn btn-info" href="notat.php?id=<?php echo $n['id']; ?>">Notat</a> <a class="btn btn-light" href="notat.php?id=<?php echo $n['id']; ?>">Mungesat</a> <a class="btn btn-success" href="notat.php?id=<?php echo $n['id']; ?>">Raporti</a></td>
+                        <td><a class="btn btn-danger" href="nxenesi_fshi.php?id=<?php echo $n['id']; ?>">Delete</a> <a class="btn btn-warning" href="nxenesi_edit.php?id=<?php echo $n['id']; ?>">Edit</a> <a class="btn btn-info" href="notat-id.php?id=<?php echo $n['id']; ?>">Notat</a> <a class="btn btn-light" href="mungesat-id.php?id=<?php echo $n['id']; ?>">Mungesat</a> <a class="btn btn-success" href="raporti.php?id=<?php echo $n['id']; ?>">Raporti</a></td>
                         </tr>
                     <?php } ?>
                 </tbody>
