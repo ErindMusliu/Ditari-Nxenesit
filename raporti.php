@@ -18,7 +18,7 @@ $notat = $nota->mesatarjaENxenesit($id);
 
 ?>
 
-<div class="container">
+<div class="container" style="min-height: 83vh;">
     <div class="row justify-content-center">
         <div class="col-md-7 mt-5">
             <table class="table table-dark table-hover">
@@ -62,3 +62,10 @@ $notat = $nota->mesatarjaENxenesit($id);
         </div>
     </div>
 </div>
+
+
+<?php
+
+include('footer.php');
+
+?>
