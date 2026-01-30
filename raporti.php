@@ -52,6 +52,11 @@ $notat = $nota->mesatarjaENxenesit($id);
                         <td><?php echo round($n['mesatarja'],2) ?></td>
                     </tr>
                     <?php } ?>
+
+                    <tr>
+                        <td>Actions</td>
+                        <td><a class="btn btn-info" href="notat-id.php?id=<?php echo $id; ?>">Notat</a> <a class="btn btn-light" href="mungesat-id.php?id=<?php echo $id; ?>">Mungesat</a> <a class="btn btn-success" href="index.php">Kthehu</a></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
