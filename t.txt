@@ -35,7 +35,7 @@ ditari/
   templates/
     header.php
     footer.php
-3) Databaza – kërkesat për tabela
+Databaza – kërkesat për tabela
 Krijoni databazën ditari_db dhe tabelat: nxenesit, notat, mungesat.
 
 3.1 Tabela nxenesit
