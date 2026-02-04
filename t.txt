@@ -58,8 +58,7 @@ data (date)
 ore (tinyint)
 arsye (varchar, nullable)
 created_at (timestamp)
-Kërkesë e detyrueshme: Vendosni ON DELETE CASCADE te foreign keys, që kur fshihet nxënësi të fshihen automatikisht notat dhe mungesat.
-4) Klasa që duhet të krijoni (obligative)
+Kërkesë e detyrueshme: Vendosni ON DELETE CASCADE te foreign keys, që kur fshihet nxënësi të fshihen automatikisht notat dhe mungesat.Klasa që duhet të krijoni (obligative)
 4.1 Database.php
 Metodë: lidhja(): mysqli
 4.2 Nxenesi.php
